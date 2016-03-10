@@ -13,7 +13,16 @@
     margin: 2em auto;
   }
 
-  
+  #tech-list {
+    text-align: center;
+    ul {
+      list-style: none;
+      li.list-header {
+        font-weight: bolder;
+        font-size: 1.2em;
+      }
+    }
+  }
 
 
 }
