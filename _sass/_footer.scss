@@ -1,6 +1,20 @@
-.social-media-list {
-  list-style: none;
-  svg {
-    max-width: 40px;
-  };
+#footer {
+  h4 {
+    font-size: 1em;
+    margin-bottom: .8em;
+  }
+  p, li {
+    font-size: .85em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  ul.contact-list {
+
+    list-style: none;
+    svg {
+      max-width: 15px;
+    };
+  }
 }
