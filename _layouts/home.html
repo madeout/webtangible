@@ -7,6 +7,9 @@
 
   <h1>{{ site.title }}</h1>
   {{ site.description }}
+  <p>
+    <a id="form-collapse-button" href="#" class="button button">Contact Us</a>
+  </p>
 
   <hr>
   {% include contact_form.html %}
@@ -16,5 +19,24 @@
 
   <hr>
 
-  {% include footer.html %}
+{% include footer.html %}
 </div>
+<script src="{{ "/js/d3.v3.js" | prepend: site.baseurl }}" charset="utf-8"></script>
+<script>
+
+
+// show / hide form
+d3.select("#webtangible-contact-form").style("display", "none")
+
+d3.select("#form-collapse-button")
+  .on("click", function(){
+    d3.event.preventDefault();
+    d3.select("#webtangible-contact-form")
+      .transition()
+      .duration(2500)
+      .style("display", function(){
+        return d3.select(this).style("display") == "none" ? "block" : "none";
+      });
+  })
+
+</script>
