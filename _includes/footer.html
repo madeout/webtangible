@@ -1,18 +1,14 @@
-<footer class="site-footer">
+<footer class="row">
 
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <div class="four columns">
+        <h4 class="footer-heading">{{ site.title }}</h4>
         <ul class="contact-list">
           <li>{{ site.title }}</li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="four columns">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -28,11 +24,9 @@
         </ul>
       </div>
 
-      <div class="footer-col footer-col-3">
+      <div class="four columns">
         <p>{{ site.description }}</p>
       </div>
     </div>
-
-  </div>
 
 </footer>
