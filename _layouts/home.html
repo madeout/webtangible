@@ -41,4 +41,54 @@ d3.select("#form-collapse-button")
       });
   })
 
+// catch send event
+d3.select("#webtangible-contact-form").on("submit", function(data) {
+  d3.event.preventDefault();
+
+  var email = d3.select("#form-email").property("value");
+  var subject = d3.select("#form-subject").property("value");
+  var message = d3.select("#form-message").property("value");
+
+  var data = {
+    "email" : email,
+    "subject" : subject,
+    "message" : message
+  }
+
+  console.log(data);
+  d3.xhr("//formspree.io/webtangible@leclub.io")
+    .header("Content-Type", "application/json")
+    .post(
+        JSON.stringify(data),
+        function(err, resp){
+          if (err) {
+            console.log("error");
+            d3.select("#webtangible-contact-form")
+              .append("<p style='color: red'>An error has occured. Please try again.<p>")
+          }
+          else {
+            console.log(resp.response);
+            var data = JSON.parse(resp.response);
+            console.log("got response", data);
+            console.log();
+
+            d3.select("#webtangible-contact-form")
+              .selectAll("*")
+              .remove()
+
+            d3.select("#webtangible-contact-form")
+              .append("p")
+              .attr("class", "center")
+              .text("Thanks for your message. We'll get back to you soon !")
+          }
+        }
+    );
+  //   $.ajax({
+  //     url: ,
+  //     method: "POST",
+  //     data: {message: "hello!"},
+  //     dataType: "json"
+  // });
+
+})
 </script>
