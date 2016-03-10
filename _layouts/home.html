@@ -2,8 +2,6 @@
 
 {% include home/gallery.html %}
 
-<hr>
-
 <div class="container home">
   <div id="jumbo">
     <h1>{{ site.title }}</h1>
@@ -22,7 +20,10 @@
   {% include home/list_tech.html %}
 </div>
 
+<div class="container">
   {% include footer.html %}
+</div>
+
 <script src="{{ "/js/d3.v3.js" | prepend: site.baseurl }}" charset="utf-8"></script>
 <script>
 
