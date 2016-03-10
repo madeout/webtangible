@@ -1,29 +1,28 @@
 {% include head.html %}
 
-<div class="container" id="main">
-  {% include home/gallery.html %}
+{% include home/gallery.html %}
 
-  <hr>
+<hr>
 
-  <h1>{{ site.title }}</h1>
-  {{ site.description }}
-  <p>
-    <a id="form-collapse-button" href="#" class="button button">Contact Us</a>
-  </p>
-
-  <hr>
+<div class="container home">
+  <div id="jumbo">
+    <h1>{{ site.title }}</h1>
+    <p>
+      {{ site.description }}
+    </p>
+    <p>
+      <a id="form-collapse-button" href="#" class="button button">Contact Us</a>
+    </p>
+  </div>
   {% include contact_form.html %}
   <hr>
+</div>
 
   {% include home/list_tech.html %}
 
-  <hr>
-
-{% include footer.html %}
-</div>
+  {% include footer.html %}
 <script src="{{ "/js/d3.v3.js" | prepend: site.baseurl }}" charset="utf-8"></script>
 <script>
-
 
 // show / hide form
 d3.select("#webtangible-contact-form").style("display", "none")
